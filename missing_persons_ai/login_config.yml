@@ -1,0 +1,30 @@
+credentials:
+  usernames:
+    pramod_admin:
+      name: Pramod Kumar
+      email: pramodanem.pa2004@gmail.com
+      password: Admin@123
+      role: Admin
+      city: Hyderabad
+      area: Vijaynagar Colony
+    officer_raj:
+      name: Raj Sharma
+      email: raj@police.gov.in
+      password: Officer@456
+      role: Admin
+      city: Mumbai
+      area: Andheri East
+    user_priya:
+      name: Priya Sharma
+      email: priya@gmail.com
+      password: User@789
+      role: User
+      city: Delhi
+      area: Connaught Place
+    user_amit:
+      name: Amit Patel
+      email: amit@gmail.com
+      password: User@789
+      role: User
+      city: Pune
+      area: Kothrud

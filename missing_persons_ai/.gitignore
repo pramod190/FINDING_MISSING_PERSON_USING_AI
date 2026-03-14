@@ -1,0 +1,14 @@
+*.pyc
+__pycache__/
+sqlite_database.db
+resources/*.jpg
+resources/*.jpeg
+resources/*.png
+resources/*.webp
+.env
+*.pkl
+*.egg-info/
+dist/
+build/
+.DS_Store
+Thumbs.db
