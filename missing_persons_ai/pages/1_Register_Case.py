@@ -41,7 +41,7 @@ def main():
             key="register_image",
         )
         if image_obj:
-            st.image(image_obj, caption="Uploaded photo", use_container_width=True)
+            st.image(image_obj, caption="Uploaded photo", use_column_width=True)
             with st.spinner("🔍 Extracting face landmarks…"):
                 img_np = image_obj_to_numpy(image_obj)
                 face_mesh = extract_face_mesh_landmarks(img_np)
@@ -66,7 +66,7 @@ def main():
             birth_marks   = st.text_input("Identifying Marks / Birth Marks")
 
             st.divider()
-            submitted = st.form_submit_button("💾 Register Case", use_container_width=True)
+            submitted = st.form_submit_button("💾 Register Case")
 
         if submitted:
             if not name.strip():

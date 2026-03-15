@@ -107,7 +107,7 @@ def main():
     img_col, result_col = st.columns([1, 1])
 
     with img_col:
-        st.image(image_obj, caption="Query image", use_container_width=True)
+        st.image(image_obj, caption="Query image", use_column_width=True)
 
     with result_col:
         # ── Step 1: Extract face mesh ──────────────────────────────────────────
@@ -201,7 +201,7 @@ def main():
                             st.image(
                                 person.image_path,
                                 caption="Registered photo",
-                                use_container_width=False,
+                                use_column_width=False,
                                 width=200,
                             )
                         except Exception:
@@ -237,7 +237,7 @@ def main():
                 for c in candidates
             ]
             df = pd.DataFrame(rows).sort_values("Score", ascending=False)
-            st.dataframe(df, use_container_width=True)
+            st.dataframe(df)
 
 
 main()

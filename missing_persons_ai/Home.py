@@ -278,13 +278,13 @@ if not st.session_state["login_status"]:
         tab_col1, tab_col2 = st.columns(2)
         with tab_col1:
             si_type = "primary"   if st.session_state["auth_tab"] == "login"  else "secondary"
-            if st.button("🔐  Sign In", use_container_width=True, type=si_type, key="tab_login"):
+            if st.button("🔐  Sign In", type=si_type, key="tab_login"):
                 st.session_state["auth_tab"]    = "login"
                 st.session_state["signup_done"] = False
                 st.rerun()
         with tab_col2:
             su_type = "primary"   if st.session_state["auth_tab"] == "signup" else "secondary"
-            if st.button("✏️  Sign Up", use_container_width=True, type=su_type, key="tab_signup"):
+            if st.button("✏️  Sign Up", type=su_type, key="tab_signup"):
                 st.session_state["auth_tab"]    = "signup"
                 st.session_state["signup_done"] = False
                 st.rerun()
@@ -302,7 +302,7 @@ if not st.session_state["login_status"]:
                 li_pass = st.text_input("Password",          placeholder="Enter your password", type="password", key="li_pass")
                 st.markdown("")
 
-                if st.button("Sign In  →", use_container_width=True, type="primary", key="btn_signin"):
+                if st.button("Sign In  →", type="primary", key="btn_signin"):
                     cfg   = load_config()
                     USERS = cfg["credentials"]["usernames"]
                     if not li_user.strip():
@@ -326,7 +326,7 @@ if not st.session_state["login_status"]:
                 st.markdown("""
                 <div class="or-divider">New here?</div>
                 """, unsafe_allow_html=True)
-                if st.button("Create a free account  →", use_container_width=True, key="goto_signup"):
+                if st.button("Create a free account  →", key="goto_signup"):
                     st.session_state["auth_tab"] = "signup"
                     st.rerun()
 
@@ -359,7 +359,7 @@ if not st.session_state["login_status"]:
                 </div>""", unsafe_allow_html=True)
                 st.balloons()
                 st.markdown("")
-                if st.button("Go to Sign In  →", use_container_width=True, type="primary"):
+                if st.button("Go to Sign In  →", type="primary"):
                     st.session_state["auth_tab"]    = "login"
                     st.session_state["signup_done"] = False
                     st.rerun()
@@ -429,7 +429,7 @@ if not st.session_state["login_status"]:
                     st.markdown("")
 
                     # ── Submit ─────────────────────────────────────────────────
-                    if st.button("Create Account  →", use_container_width=True, type="primary", key="btn_create"):
+                    if st.button("Create Account  →", type="primary", key="btn_create"):
                         cfg   = load_config()
                         USERS = cfg["credentials"]["usernames"]
                         errs  = []
@@ -482,7 +482,7 @@ if not st.session_state["login_status"]:
                     st.markdown("""
                     <div class="or-divider">Already have an account?</div>
                     """, unsafe_allow_html=True)
-                    if st.button("Sign in instead  →", use_container_width=True, key="goto_login2"):
+                    if st.button("Sign in instead  →", key="goto_login2"):
                         st.session_state["auth_tab"] = "login"
                         st.rerun()
 
@@ -514,7 +514,7 @@ with st.sidebar:
     st.markdown("- 🤖 Face Matching")
     st.markdown("- 📁 Case Management")
     st.divider()
-    if st.button("🚪 Logout", use_container_width=True):
+    if st.button("🚪 Logout"):
         logout()
 
 # ── Header ─────────────────────────────────────────────────────────────────────

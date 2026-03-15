@@ -77,7 +77,7 @@ def main():
         status_filter = st.selectbox("Status", ["All", "Not Found", "Found"])
     with col_refresh:
         st.write("")
-        refresh = st.button("🔄 Refresh", use_container_width=True)
+        refresh = st.button("🔄 Refresh")
 
     status_map = {"All": None, "Not Found": "NF", "Found": "F"}
     status_val = status_map[status_filter]
@@ -144,7 +144,7 @@ def main():
 
         df = pd.DataFrame(rows)
         display_df = df.drop(columns=["_id"])
-        st.dataframe(display_df, use_container_width=True, height=400)
+        st.dataframe(display_df, height=400)
 
         # ── Inline mark-found ──────────────────────────────────────────────────
         st.divider()
@@ -159,7 +159,7 @@ def main():
             )
             found_location = col_loc.text_input("Found at location")
 
-            if col_btn.button("✅ Mark Found", use_container_width=True):
+            if col_btn.button("✅ Mark Found"):
                 person = next((p for p in nf_persons if p.name == selected_name), None)
                 if person:
                     updated = db_queries.mark_person_found(

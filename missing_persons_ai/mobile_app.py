@@ -72,7 +72,7 @@ match_result = None
 match_score  = 0.0
 
 if image_obj:
-    st.image(image_obj, caption="Your uploaded photo", use_container_width=True)
+    st.image(image_obj, caption="Your uploaded photo", use_column_width=True)
 
     with st.spinner("🔍 Detecting face…"):
         img_np    = image_obj_to_numpy(image_obj)
@@ -128,7 +128,7 @@ with st.form("public_form"):
     notes         = st.text_area("Additional Notes", height=80,
                                   placeholder="Clothing, behaviour, who they were with…")
 
-    submit_btn = st.form_submit_button("📤 Submit Sighting Report", use_container_width=True)
+    submit_btn = st.form_submit_button("📤 Submit Sighting Report")
 
 if submit_btn:
     errors = []
