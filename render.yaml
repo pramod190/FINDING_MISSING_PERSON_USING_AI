@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: missing-person-ai
+    runtime: python
+    plan: free
+    buildCommand: pip install -r missing_persons_ai/requirements.txt
+    startCommand: streamlit run missing_persons_ai/Home.py --server.port $PORT --server.address 0.0.0.0
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10
